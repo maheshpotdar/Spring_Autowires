@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+	<!-- required activate. -->
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+	</bean>
+
+	<bean id="b1" class="com.mahesh.modelByType.Bike">
+		<property name="bikeName" value="Bajaj Platina 150CC" />
+		<property name="bikeavg" value="89" />
+	</bean>
+
+	<bean id="c1" class="com.mahesh.modelByType.Car">
+		<property name="carname" value="Wagnor Lxi" />
+		<property name="carmodel" value="250CC" />
+	</bean>
+
+	<bean id="c2" class="com.mahesh.modelByType.Company">
+		<property name="compname" value="TCS,India" />
+		<property name="compaddress" value="Pune,India" />
+	</bean>
+
+	<!-- autowire="byType" spring ioc container ne byType employee la bagitalyavar 
+		to lagecha employee class madhe gela ani object ahet kay tar Car type,Bike 
+		type,Company type ahe. yethe Bike,Car,Company object ahet kay tar ahet tar 
+		mag ByType manaje Setter Inject Kara. -->
+
+	<bean id="e1" class="com.mahesh.modelByType.Employee"
+		autowire="byType">
+		<property name="empname" value="Mahesh Dilip Potdar" />
+		<property name="empaddress" value="Pune,India" />
+	</bean>
+
+
+
+</beans>			

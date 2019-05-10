@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+	<!-- required activate. -->
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+	</bean>
+
+	<bean id="bike" class="com.mahesh.model.Bike">
+		<constructor-arg value="Bajaj Platina 150CC">
+		</constructor-arg>
+		<constructor-arg value="89">
+		</constructor-arg>
+		<constructor-arg value="India"></constructor-arg>
+	</bean>
+
+	<bean id="car" class="com.mahesh.model.Car">
+		<constructor-arg value="Wagnor Lxi" index="0"
+			type="java.lang.String"></constructor-arg>
+		<constructor-arg value="250CC" index="1"
+			type="java.lang.String"></constructor-arg>
+	</bean>
+
+	<bean id="company" class="com.mahesh.model.Company">
+		<constructor-arg type="java.lang.String" index="0"
+			value="TCS,India" />
+		<constructor-arg type="java.lang.String" index="1"
+			value="Pune,India" />
+	</bean>
+
+	<!-- autowire="Constructor" spring ioc container IoC Container check karanar 
+		Constructor manaje class madhe Type che nav Car,Company,Bike ani spring.xml 
+		madhe ticha Type chi nave ahet kay ahe tar inject kar Constructor manaje 
+		ByType Checking injection. -->
+
+	<bean id="emp" class="com.mahesh.model.Employee"
+		autowire="constructor">
+		<constructor-arg index="0" type="java.lang.String" value="Mahesh Dilip Potdar"></constructor-arg>
+		<constructor-arg index="1" type="java.lang.String" value="Pune,India"></constructor-arg>
+	</bean>
+
+
+
+</beans>			

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+	<!-- required activate. -->
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor">
+	</bean>
+
+	<bean id="bike" class="com.mahesh.model.Bike">
+		<property name="bikeName" value="Bajaj Platina 150CC" />
+		<property name="bikeavg" value="89" />
+	</bean>
+
+	<bean id="car" class="com.mahesh.model.Car">
+		<property name="carname" value="Wagnor Lxi" />
+		<property name="carmodel" value="250CC" />
+	</bean>
+
+	<bean id="company" class="com.mahesh.model.Company">
+		<property name="compname" value="TCS,India" />
+		<property name="compaddress" value="Pune,India" />
+	</bean>
+
+	<!-- autowire="ByName" spring ioc container IoC Container check karanar 
+		ByName manaje class madhe variable che nav car,company,bike ani spring.xml 
+		madhe ticha variable chi nave ahet kay ahe tar inject kar byName manaje setter 
+		injection. -->
+
+	<bean id="emp" class="com.mahesh.model.Employee" autowire="byName">
+		<property name="empname" value="Mahesh Dilip Potdar" />
+		<property name="empaddress" value="Pune,India" />
+	</bean>
+
+
+
+</beans>			
